@@ -274,17 +274,6 @@ Wire Wire Line
 	6625 3300 6625 3500
 Wire Wire Line
 	7575 3500 7700 3500
-$Comp
-L power:GND #PWR01
-U 1 1 5B7195DE
-P 1425 2325
-F 0 "#PWR01" H 1425 2075 50  0001 C CNN
-F 1 "GND" H 1430 2152 50  0000 C CNN
-F 2 "" H 1425 2325 50  0001 C CNN
-F 3 "" H 1425 2325 50  0001 C CNN
-	1    1425 2325
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4850 6375 4850 6450
 Wire Wire Line
@@ -302,23 +291,23 @@ Wire Wire Line
 $Comp
 L Switch:SW_SPST SW1
 U 1 1 5B722FE9
-P 2650 1625
-F 0 "SW1" H 2650 1860 50  0000 C CNN
-F 1 "SW_SPST" H 2650 1769 50  0000 C CNN
-F 2 "" H 2650 1625 50  0001 C CNN
-F 3 "" H 2650 1625 50  0001 C CNN
-	1    2650 1625
+P 2500 1625
+F 0 "SW1" H 2500 1860 50  0000 C CNN
+F 1 "SW_SPST" H 2500 1769 50  0000 C CNN
+F 2 "" H 2500 1625 50  0001 C CNN
+F 3 "" H 2500 1625 50  0001 C CNN
+	1    2500 1625
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:VDD #PWR04
 U 1 1 5B725D50
-P 2975 1375
-F 0 "#PWR04" H 2975 1225 50  0001 C CNN
-F 1 "VDD" H 2992 1548 50  0000 C CNN
-F 2 "" H 2975 1375 50  0001 C CNN
-F 3 "" H 2975 1375 50  0001 C CNN
-	1    2975 1375
+P 3150 1375
+F 0 "#PWR04" H 3150 1225 50  0001 C CNN
+F 1 "VDD" H 3167 1548 50  0000 C CNN
+F 2 "" H 3150 1375 50  0001 C CNN
+F 3 "" H 3150 1375 50  0001 C CNN
+	1    3150 1375
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -506,8 +495,6 @@ Wire Wire Line
 Wire Wire Line
 	1375 2250 1425 2250
 Wire Wire Line
-	1425 2250 1425 2325
-Wire Wire Line
 	1375 2225 1375 2250
 Wire Wire Line
 	1475 2225 1475 2250
@@ -575,50 +562,19 @@ $EndComp
 $Comp
 L Device:C C2
 U 1 1 5B7E953A
-P 2375 1875
-F 0 "C2" H 2490 1921 50  0000 L CNN
-F 1 "1u" H 2490 1830 50  0000 L CNN
-F 2 "" H 2413 1725 50  0001 C CNN
-F 3 "~" H 2375 1875 50  0001 C CNN
-	1    2375 1875
+P 2250 1875
+F 0 "C2" H 2365 1921 50  0000 L CNN
+F 1 "1u" H 2365 1830 50  0000 L CNN
+F 2 "" H 2288 1725 50  0001 C CNN
+F 3 "~" H 2250 1875 50  0001 C CNN
+	1    2250 1875
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2375 1625 2375 1725
-Wire Wire Line
-	2450 1625 2375 1625
-Connection ~ 2375 1625
 Connection ~ 2050 1625
 Wire Wire Line
 	2050 1625 2050 1725
-Wire Wire Line
-	2050 1625 2375 1625
-$Comp
-L power:GND #PWR03
-U 1 1 5B7F5E06
-P 2200 2125
-F 0 "#PWR03" H 2200 1875 50  0001 C CNN
-F 1 "GND" H 2205 1952 50  0000 C CNN
-F 2 "" H 2200 2125 50  0001 C CNN
-F 3 "" H 2200 2125 50  0001 C CNN
-	1    2200 2125
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2050 2025 2200 2025
-Wire Wire Line
-	2200 2025 2200 2125
-Wire Wire Line
-	2375 2025 2200 2025
-Connection ~ 2200 2025
-Wire Notes Line
-	3250 1000 1000 1000
 Wire Notes Line
 	1000 1000 1000 2700
-Wire Notes Line
-	1000 2700 3250 2700
-Wire Notes Line
-	3250 1000 3250 2700
 Wire Notes Line
 	4050 2150 4050 3725
 Wire Notes Line
@@ -684,9 +640,7 @@ Layout Notes:\n1. Bypass capacitor C4 should be kept as close to U2 as possible.
 Wire Wire Line
 	1775 1625 2050 1625
 Wire Wire Line
-	2975 1375 2975 1625
-Wire Wire Line
-	2975 1625 2850 1625
+	3150 1375 3150 1625
 Wire Wire Line
 	5125 5125 5125 5100
 Wire Wire Line
@@ -698,4 +652,82 @@ Wire Wire Line
 	5125 5500 5050 5500
 Text Notes 3675 975  0    50   ~ 0
 Schematic Notes:\n1. U2 can sink a maximum of 50mA on any input.\n2. Red LED set for 20mA at 2V and blue and green LEDs set at 20mA at 3.3V.\n3. Refelective phototranistor LED set for 20mA at 1.25V.
+Wire Wire Line
+	2050 1625 2250 1625
+Wire Wire Line
+	2250 1725 2250 1625
+$Comp
+L Device:R R10
+U 1 1 5B79EE40
+P 2800 1875
+F 0 "R10" H 2870 1921 50  0000 L CNN
+F 1 "150" H 2875 1850 50  0000 L CNN
+F 2 "" V 2730 1875 50  0001 C CNN
+F 3 "~" H 2800 1875 50  0001 C CNN
+	1    2800 1875
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5B7AA4CB
+P 2800 2250
+F 0 "D2" V 2838 2133 50  0000 R CNN
+F 1 "LED" V 2747 2133 50  0000 R CNN
+F 2 "" H 2800 2250 50  0001 C CNN
+F 3 "~" H 2800 2250 50  0001 C CNN
+	1    2800 2250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1425 2450 1875 2450
+Wire Wire Line
+	1425 2250 1425 2450
+Wire Wire Line
+	2050 2025 2050 2450
+Connection ~ 2050 2450
+Wire Wire Line
+	2050 2450 2250 2450
+Wire Wire Line
+	2250 2025 2250 2450
+Connection ~ 2250 2450
+$Comp
+L power:GND #PWR?
+U 1 1 5B7B6C25
+P 1875 2475
+F 0 "#PWR?" H 1875 2225 50  0001 C CNN
+F 1 "GND" H 1880 2302 50  0000 C CNN
+F 2 "" H 1875 2475 50  0001 C CNN
+F 3 "" H 1875 2475 50  0001 C CNN
+	1    1875 2475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1875 2475 1875 2450
+Connection ~ 1875 2450
+Wire Wire Line
+	1875 2450 2050 2450
+Text Notes 3075 2375 0    50   ~ 0
+Power\nGood\nIndicator
+Wire Wire Line
+	2800 2450 2800 2400
+Wire Wire Line
+	2250 2450 2800 2450
+Wire Wire Line
+	2300 1625 2250 1625
+Connection ~ 2250 1625
+Wire Wire Line
+	2700 1625 2800 1625
+Wire Wire Line
+	2800 1625 2800 1725
+Wire Wire Line
+	2800 1625 3150 1625
+Connection ~ 2800 1625
+Wire Notes Line
+	1000 1000 3475 1000
+Wire Notes Line
+	1000 2700 3475 2700
+Wire Notes Line
+	3475 1000 3475 2700
+Wire Wire Line
+	2800 2025 2800 2100
 $EndSCHEMATC
